@@ -6,7 +6,7 @@ import datetime
 def save():
     im = ImageGrab.grabclipboard()
     if isinstance(im, Image.Image):
-        im.save(str("D:\\Screenshots\\")+str(datetime.datetime.today()).replace(" ","-").replace(":","-")+'.jpg')
+        im.save(str("SAVE DIRECTORY HERE")+str(datetime.datetime.today()).replace(" ","-").replace(":","-")+'.jpg')
         print('saved')
     else:
         print('no image')
@@ -14,9 +14,6 @@ def save():
 from pynput.keyboard import Key, Listener
 
 def on_press(key):
-    #この関数が呼ばれているかどうかチェックするための処理
-
-
     try:
         if key.char == "Key.ctrl_r":
             save()
